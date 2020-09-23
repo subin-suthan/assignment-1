@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate(){
+            var uname=document.getElementById('name').value;
+            var pass=document.getElementById('password').value;
+            var email=document.getElementById('email').value;
+            var ph=document.getElementById('phone').value;
+
+            var names=["subin","tom","peter"];
+            
+            var namelen=uname.length;
+            var passlen=pass.length;
+            var phonelen=ph.length;
+            var letters = /^[A-Za-z]+$/;
+
+           
+
+            if(!(uname.match(letters)) || namelen<5 || namelen>15){
+                alert("error in Naming");
+                document.getElementById('name').focus();
+            }
+            else if(!(pass.match(/[A-Za-z0-9]/)) || passlen<7 || passlen>15){
+                alert("password invalid");
+                document.getElementById('password').value="";
+
+            document.getElementById('password').focus();
+            }
+            else if(isNaN(ph) || phonelen!=10 ){
+                alert("Phone should be no");
+                document.getElementById('phone').focus();
+            }
+         
+            else if(names.indexOf(uname) !== -1 ){
+                alert('User is already there, please enter another one');
+                document.getElementById('name').focus();
+            }
+            
+            else{
+                alert("User registered")
+                document.getElementById("demo").innerHTML="Welcome "+name+"is Registered";
+            }
+            
+        }
+           
+            
+    </script>
+</head>
+<body style="background-color: aquamarine;">
+
+    <h1>Register</h1>
+    <form  id="myform" >
+        Enter Username:<input type="text" id="name"><br/><br/>     
+         Enter Password:<input type="password" id="password"><br><br>
+        Enter E mail:<input type="email" id="email" required><br><br>
+        Enter Phone no:<input type="text" id="phone"><br><br>
+        <input type="button" value="Click to Register" onclick="validate();" >
+
+    </form>
+</body><br/><br/><br/>
+
+
+<div id="demo" style="font-size: large;color: burlywood;"></div>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drop Down</title>
+    <script>
+      function action() {
+       
+
+        var g= new Array(
+          "Lenovo Apple samsung",
+          "Nokia oneplus google",
+          "Sharp Bravia phillips"
+        );
+        var optionNumber = document.getElementById("dd").selectedIndex;
+
+        if (optionNumber != 0) {
+          document.getElementById("demo").innerHTML = "The list is as follows "+g[optionNumber];
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <h1></h1>
+      <select id="dd" onchange="action()">
+        <option>--Products--</option>
+        <option>laptops</option>
+        <option>Mobile</option>
+        <option>Tv</option>
+        
+      </select>
+      <div
+        id="demo"
+        style="background-color: aqua; margin-top: 20px; width: 200px"
+      ></div>
+      <p id="demo"></p>
+    </center>
+  </body>
+</html>
